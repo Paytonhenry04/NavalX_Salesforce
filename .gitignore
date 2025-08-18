@@ -1,0 +1,28 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Salesforce DX
+.sfdx/
+*.log
+*.tmp
+*.bak
+*.backup
+*.local
+*.DS_Store
+*.sublime*
+*.code-workspace
+*.env
+coverage/
+test-results/
+
+# OS/Editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+*.orig

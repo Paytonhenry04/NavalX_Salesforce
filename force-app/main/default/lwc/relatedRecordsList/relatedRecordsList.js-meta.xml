@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>57.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>Related Records List</masterLabel>
+    <description>Generic LWC to show top N related records in a datatable style.</description>
+    <targets>
+        <target>lightning__RecordPage</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__RecordPage">
+            <property name="parentObjectApiName" type="String"
+                      label="Parent Object API Name"
+                      description="e.g. Company__c" />
+            <property name="childObjectApiName" type="String"
+                      label="Child Object API Name"
+                      description="e.g. Product2" />
+            <property name="lookupFieldApiName" type="String"
+                      label="Lookup Field API Name"
+                      description="e.g. Company__c" />
+            <property name="childRelationshipName" type="String"
+                      label="Child Relationship API Name"
+                      description="e.g. Products__r" />
+            <property name="fieldsList" type="String"
+                      label="Fields to Show (comma-separated)"
+                      description="e.g. Name,Technology_Readiness_Level__c,Interoperability_Tags__c,Status__c" />
+            <property name="recordLimit" type="Integer"
+                      label="Number of Records to Display"
+                      description="Number of related records to fetch/display"
+                      default="2" />
+            <property
+                    name="flexipageId"
+                    type="String"
+                    label="Flexipage Id"
+                    description="The flexipage API name (such as Companies_Record_With_Success_Stories) from your dynamicRelatedListViewAll URL."
+                    required="false"
+            />
+            <property
+                name="cmpId"
+                type="String"
+                label="Component Id"
+                description="The componentId (such as lst_dynamicRelatedList3) from your dynamicRelatedListViewAll URL."
+                required="false"
+            />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

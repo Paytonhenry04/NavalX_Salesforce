@@ -1,0 +1,60 @@
+<template>
+    <lightning-card class="custom-card-container">
+        <div class="custom-card-header">
+            <div class="header-box">
+                <lightning-icon
+                    icon-name={collapseIconName}
+                    alternative-text="Toggle"
+                    class="collapse-icon"
+                    size="x-small"
+                    onclick={toggleCollapse}
+                ></lightning-icon>
+                <span class="custom-card-title" onclick={handleHeaderClick}>
+                {cardTitle}
+                </span>
+            </div>
+        </div>
+
+
+        <template if:false={isCollapsed}>
+            <div class="custom-card-body">
+                <template if:true={noRecordsNoError}>
+                    <p>No records found.</p>
+                </template>
+
+                <template if:true={error}>
+                    <p class="error-text">{error}</p>
+                </template>
+
+                <template if:true={hasRecords}>
+                    <template for:each={displayedData} for:item="rec">
+                        <div key={rec.Id} class="record-card">
+                            <div class="record-card-title">
+                                <a href={rec.url} class="record-link">{rec.title}</a>
+                            </div>
+                            <div class="record-card-fields">
+                                <template for:each={rec.fields} for:item="fld">
+                                    <div key={fld.apiName} class="record-card-field">
+                                        <span class="field-label">{fld.label}:</span>
+
+                                        <template if:true={fld.isImage}>
+                                            <img
+                                                src={fld.value}
+                                                alt={fld.label}
+                                                style="max-width:100px; max-height:100px;"
+                                            />
+                                        </template>
+
+                                        <template if:false={fld.isImage}>
+                                            <span class="field-value">{fld.value}</span>
+                                        </template>
+                                    </div>
+                                </template>
+                            </div>
+                        </div>
+                    </template>
+                </template>
+            </div>
+        </template>
+    </lightning-card>
+</template>
