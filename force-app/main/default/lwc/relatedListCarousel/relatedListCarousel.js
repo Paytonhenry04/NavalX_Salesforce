@@ -48,12 +48,13 @@ export default class RelatedListCarousel extends NavigationMixin(LightningElemen
         return !this.hasRecords && !this.error;
     }
 
+    // Always show arrows when there are records (for cycling)
     get showLeftArrow() {
-        return this.hasRecords && this.currentIndex > 0;
+        return this.hasRecords && this.tableData.length > 1;
     }
 
     get showRightArrow() {
-        return this.hasRecords && this.currentIndex < this.tableData.length - 1;
+        return this.hasRecords && this.tableData.length > 1;
     }
 
     get carouselInfo() {
@@ -114,8 +115,8 @@ export default class RelatedListCarousel extends NavigationMixin(LightningElemen
             });
 
             this.error = undefined;
-            // Start with last card active for stacking effect
-            this.currentIndex = Math.max(0, this.tableData.length - 1);
+            // Start with first item (index 0)
+            this.currentIndex = 0;
             this.updateCardClasses();
         })
         .catch(err => {
@@ -150,17 +151,27 @@ export default class RelatedListCarousel extends NavigationMixin(LightningElemen
     }
 
     handlePrevious() {
+        if (this.tableData.length <= 1) return;
+        
+        // Go to previous item, or cycle to last item if at beginning
         if (this.currentIndex > 0) {
             this.currentIndex--;
-            this.updateCardClasses();
+        } else {
+            this.currentIndex = this.tableData.length - 1; // Cycle to last item
         }
+        this.updateCardClasses();
     }
 
     handleNext() {
+        if (this.tableData.length <= 1) return;
+        
+        // Go to next item, or cycle to first item if at end
         if (this.currentIndex < this.tableData.length - 1) {
             this.currentIndex++;
-            this.updateCardClasses();
+        } else {
+            this.currentIndex = 0; // Cycle back to first item
         }
+        this.updateCardClasses();
     }
 
     updateCardClasses() {
@@ -168,12 +179,16 @@ export default class RelatedListCarousel extends NavigationMixin(LightningElemen
             const position = index - this.currentIndex;
             let cardClass = 'record-card';
 
-            // Stack cards: active (current), middle (previous), bottom (2 back)
+            // Stack cards: active (current), middle (next), bottom (next+1)
             if (position === 0) {
                 cardClass += ' card-active';
-            } else if (position === -1) {
+            } else if (position === 1 || (this.currentIndex === this.tableData.length - 1 && index === 0)) {
+                // Show next card, or first card if we're at the last item
                 cardClass += ' card-middle';
-            } else if (position === -2) {
+            } else if (position === 2 || 
+                      (this.currentIndex === this.tableData.length - 1 && index === 1) ||
+                      (this.currentIndex === this.tableData.length - 2 && index === 0)) {
+                // Show card after next, handle wrapping for last items
                 cardClass += ' card-bottom';
             } else {
                 cardClass += ' card-hidden';
