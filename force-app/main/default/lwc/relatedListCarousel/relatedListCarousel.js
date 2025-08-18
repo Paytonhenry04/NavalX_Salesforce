@@ -16,8 +16,6 @@ export default class RelatedListCarousel extends NavigationMixin(LightningElemen
     @track error;
     @track isCollapsed = false;
     @track currentIndex = 0;
-    
-    itemsPerPage = 1;
 
     get collapseIconName() {
         return this.isCollapsed ? 'utility:chevronright' : 'utility:chevrondown';
@@ -50,19 +48,12 @@ export default class RelatedListCarousel extends NavigationMixin(LightningElemen
         return !this.hasRecords && !this.error;
     }
 
-    get displayedData() {
-        if (!this.hasRecords) {
-            return [];
-        }
-        return this.tableData.slice(this.currentIndex, this.currentIndex + this.itemsPerPage);
-    }
-
     get showLeftArrow() {
-        return this.hasRecords;
+        return this.hasRecords && this.currentIndex > 0;
     }
 
     get showRightArrow() {
-        return this.hasRecords;
+        return this.hasRecords && this.currentIndex < this.tableData.length - 1;
     }
 
     get carouselInfo() {
@@ -96,7 +87,7 @@ export default class RelatedListCarousel extends NavigationMixin(LightningElemen
             const firstFld = this.firstField;
             const addFlds = this.additionalFields;
 
-            this.tableData = results.map(rec => {
+            this.tableData = results.map((rec, index) => {
                 const fields = addFlds.map(fld => {
                     const rawValue = rec[fld];
                     const isImageField = (fld === 'current_product_image__c');
@@ -116,14 +107,16 @@ export default class RelatedListCarousel extends NavigationMixin(LightningElemen
 
                 return {
                     Id: rec.Id,
-                    title: rec[firstFld],
+                    title: rec[firstFld] || `Record ${index + 1}`,
                     url: '/' + rec.Id,
                     fields: fields
                 };
             });
 
             this.error = undefined;
-            this.currentIndex = 0;
+            // Start with last card active for stacking effect
+            this.currentIndex = Math.max(0, this.tableData.length - 1);
+            this.updateCardClasses();
         })
         .catch(err => {
             this.error = err.body && err.body.message ? err.body.message : JSON.stringify(err);
@@ -158,20 +151,40 @@ export default class RelatedListCarousel extends NavigationMixin(LightningElemen
 
     handlePrevious() {
         if (this.currentIndex > 0) {
-            this.currentIndex = this.currentIndex - 1;
-        } else {
-            // Loop back to the last item
-            this.currentIndex = this.tableData.length - 1;
+            this.currentIndex--;
+            this.updateCardClasses();
         }
     }
 
     handleNext() {
         if (this.currentIndex < this.tableData.length - 1) {
-            this.currentIndex = this.currentIndex + 1;
-        } else {
-            // Loop back to the first item
-            this.currentIndex = 0;
+            this.currentIndex++;
+            this.updateCardClasses();
         }
+    }
+
+    updateCardClasses() {
+        this.tableData = this.tableData.map((rec, index) => {
+            const position = index - this.currentIndex;
+            let cardClass = 'record-card';
+
+            // Stack cards: active (current), middle (previous), bottom (2 back)
+            if (position === 0) {
+                cardClass += ' card-active';
+            } else if (position === -1) {
+                cardClass += ' card-middle';
+            } else if (position === -2) {
+                cardClass += ' card-bottom';
+            } else {
+                cardClass += ' card-hidden';
+            }
+
+            return { 
+                ...rec, 
+                cardClass,
+                position: position
+            };
+        });
     }
 
     humanizeLabel(apiName) {

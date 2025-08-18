@@ -1,5 +1,6 @@
 <template>
     <lightning-card class="custom-card-container">
+        <!-- Header -->
         <div class="custom-card-header">
             <div class="header-box">
                 <lightning-icon
@@ -7,15 +8,15 @@
                     alternative-text="Toggle"
                     class="collapse-icon"
                     size="x-small"
-                    onclick={toggleCollapse}
-                ></lightning-icon>
+                    onclick={toggleCollapse}>
+                </lightning-icon>
                 <span class="custom-card-title" onclick={handleHeaderClick}>
-                {cardTitle}
+                    {cardTitle}
                 </span>
             </div>
         </div>
 
-
+        <!-- Body -->
         <template if:false={isCollapsed}>
             <div class="custom-card-body">
                 <template if:true={noRecordsNoError}>
@@ -32,7 +33,7 @@
                         <span class="carousel-info">{carouselInfo}</span>
                     </div>
 
-                    <!-- Carousel with Side Navigation -->
+                    <!-- Carousel with Stacked Cards -->
                     <div class="carousel-wrapper">
                         <div class="carousel-nav-left">
                             <lightning-button-icon
@@ -42,34 +43,30 @@
                                 title="Previous"
                                 onclick={handlePrevious}
                                 class="side-nav-button"
-                                variant="border-filled"
-                            ></lightning-button-icon>
+                                variant="border-filled">
+                            </lightning-button-icon>
                         </div>
 
-                        <div class="carousel-content">
-                            <template for:each={displayedData} for:item="rec">
-                                <div key={rec.Id} class="record-card">
-                                    <div class="record-card-title">
-                                        <a href={rec.url} class="record-card-link">{rec.title}</a>
-                                    </div>
-                                    <div class="record-card-fields">
-                                        <template for:each={rec.fields} for:item="fld">
-                                            <div key={fld.apiName} class="record-card-field">
-                                                <span class="field-label">{fld.label}:</span>
-
-                                                <template if:true={fld.isImage}>
-                                                    <img
-                                                        src={fld.value}
-                                                        alt={fld.label}
-                                                        style="max-width:100px; max-height:100px;"
-                                                    />
-                                                </template>
-
-                                                <template if:false={fld.isImage}>
-                                                    <span class="field-value">{fld.value}</span>
-                                                </template>
-                                            </div>
-                                        </template>
+                        <div class="carousel-cards">
+                            <template for:each={tableData} for:item="rec">
+                                <div key={rec.Id} class={rec.cardClass} data-position={rec.position}>
+                                    <div class="record-card-content">
+                                        <div class="record-card-title">
+                                            <a href={rec.url} class="record-card-link">{rec.title}</a>
+                                        </div>
+                                        <div class="record-card-fields">
+                                            <template for:each={rec.fields} for:item="fld">
+                                                <div key={fld.apiName} class="record-card-field">
+                                                    <span class="field-label">{fld.label}:</span>
+                                                    <template if:true={fld.isImage}>
+                                                        <img src={fld.value} alt={fld.label} class="field-image" />
+                                                    </template>
+                                                    <template if:false={fld.isImage}>
+                                                        <span class="field-value">{fld.value}</span>
+                                                    </template>
+                                                </div>
+                                            </template>
+                                        </div>
                                     </div>
                                 </div>
                             </template>
@@ -83,8 +80,8 @@
                                 title="Next"
                                 onclick={handleNext}
                                 class="side-nav-button"
-                                variant="border-filled"
-                            ></lightning-button-icon>
+                                variant="border-filled">
+                            </lightning-button-icon>
                         </div>
                     </div>
                 </template>
