@@ -1,12 +1,10 @@
 :host {
     display: block;
-    margin: 1rem 0;
+
 }
 
 .custom-card-container {
     background-color: #ffffff;
-    border: 1px solid #f1f1f1;
-    border-radius: 1rem;
     overflow: hidden;
 }
 
@@ -18,9 +16,9 @@
     align-items: center;
 }
 
-.custom-card-header:hover .custom-card-title {
+/* .custom-card-header:hover .custom-card-title {
     text-decoration: underline;
-}
+} */
 
 .collapse-icon {
     margin-right: 0.5rem;
@@ -63,17 +61,17 @@
 /* ================================
    Carousel Info
    ================================ */
-.carousel-info-header {
+/* .carousel-info-header {
     text-align: center;
     margin-bottom: 1.25rem;
-}
+} */
 
 .carousel-info {
     font-size: 0.9375rem;
     color: #566573;
     font-weight: 500;
     background-color: rgba(255, 255, 255, 0.9);
-    padding: 0.5rem 1rem;
+    /* padding: 0.5rem 1rem; */
     border-radius: 1rem;
     display: inline-block;
     border: 1px solid rgba(255, 255, 255, 0.3);
@@ -203,7 +201,7 @@
 }
 
 .record-card-link {
-    color: #1e293b;
+    color: #3b82f6;
     text-decoration: none;
     transition: color 0.3s ease;
     display: block;
@@ -211,7 +209,6 @@
 
 .record-card-link:hover {
     text-decoration: underline;
-    color: #3b82f6;
 }
 
 .record-card-fields {

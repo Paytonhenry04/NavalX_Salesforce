@@ -130,25 +130,25 @@ export default class RelatedListCarousel extends NavigationMixin(LightningElemen
         this.isCollapsed = !this.isCollapsed;
     }
 
-    handleHeaderClick() {
-        if (this.flexipageId && this.cmpId) {
-            const url = '/lightning/cmp/force__dynamicRelatedListViewAll' +
-                `?force__flexipageId=${this.flexipageId}` +
-                `&force__cmpId=${this.cmpId}` +
-                `&force__recordId=${this.recordId}`;
-            window.open(url, '_self');
-            return;
-        }
-        this[NavigationMixin.Navigate]({
-            type: 'standard__recordRelationshipPage',
-            attributes: {
-                recordId: this.recordId,
-                objectApiName: this.parentObjectApiName,
-                relationshipApiName: this.childRelationshipName,
-                actionName: 'view'
-            }
-        });
-    }
+    // handleHeaderClick() {
+    //     if (this.flexipageId && this.cmpId) {
+    //         const url = '/lightning/cmp/force__dynamicRelatedListViewAll' +
+    //             `?force__flexipageId=${this.flexipageId}` +
+    //             `&force__cmpId=${this.cmpId}` +
+    //             `&force__recordId=${this.recordId}`;
+    //         window.open(url, '_self');
+    //         return;
+    //     }
+    //     this[NavigationMixin.Navigate]({
+    //         type: 'standard__recordRelationshipPage',
+    //         attributes: {
+    //             recordId: this.recordId,
+    //             objectApiName: this.parentObjectApiName,
+    //             relationshipApiName: this.childRelationshipName,
+    //             actionName: 'view'
+    //         }
+    //     });
+    // }
 
     handlePrevious() {
         if (this.tableData.length <= 1) return;

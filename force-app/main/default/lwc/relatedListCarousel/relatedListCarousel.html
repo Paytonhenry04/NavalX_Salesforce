@@ -29,9 +29,9 @@
 
                 <template if:true={hasRecords}>
                     <!-- Carousel Info -->
-                    <div class="carousel-info-header">
+                    <!-- <div class="carousel-info-header">
                         <span class="carousel-info">{carouselInfo}</span>
-                    </div>
+                    </div> -->
 
                     <!-- Carousel with Stacked Cards -->
                     <div class="carousel-wrapper">
@@ -51,6 +51,7 @@
                             <template for:each={tableData} for:item="rec">
                                 <div key={rec.Id} class={rec.cardClass} data-position={rec.position}>
                                     <div class="record-card-content">
+                                        <span class="carousel-info">{carouselInfo}</span>
                                         <div class="record-card-title">
                                             <a href={rec.url} class="record-card-link">{rec.title}</a>
                                         </div>
