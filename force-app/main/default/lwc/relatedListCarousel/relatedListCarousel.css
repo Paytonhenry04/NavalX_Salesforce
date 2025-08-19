@@ -16,6 +16,10 @@
     align-items: center;
 }
 
+.slds-card__body {
+    container-type: inline-size;
+}
+
 /* .custom-card-header:hover .custom-card-title {
     text-decoration: underline;
 } */
@@ -219,7 +223,7 @@
 }
 
 .record-card-field {
-    margin-bottom: 1rem;
+    margin-bottom: 0.2rem;
     padding: 0.75rem;
     background: rgba(255, 255, 255, 0.6);
     border-radius: 0.5rem;
@@ -298,9 +302,7 @@
     fill: #1f2937 !important;
 }
 
-/* ================================
-   Responsiveness
-   ================================ */
+
 @media screen and (max-width: 768px) {
     .carousel-wrapper {
         padding: 2rem 1rem;
