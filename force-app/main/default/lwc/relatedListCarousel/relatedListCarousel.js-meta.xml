@@ -9,13 +9,8 @@
     </targets>
     <targetConfigs>
         <targetConfig targets="lightning__RecordPage,lightning__AppPage,lightning__HomePage">
-            <property name="parentObjectApiName" type="String" label="Parent Object API Name" description="The API name of the parent object (e.g., Account, Contact)"/>
-            <property name="childObjectApiName" type="String" label="Child Object API Name" description="The API name of the child object to query"/>
-            <property name="lookupFieldApiName" type="String" label="Lookup Field API Name" description="The API name of the lookup field on the child object that points to the parent"/>
-            <property name="childRelationshipName" type="String" label="Child Relationship Name" description="The relationship name for navigation (optional)"/>
-            <property name="fieldsList" type="String" label="Fields List" description="Comma-separated list of field API names to display"/>
-            <property name="flexipageId" type="String" label="Flexipage ID" description="Optional flexipage ID for custom navigation"/>
-            <property name="cmpId" type="String" label="Component ID" description="Optional component ID for custom navigation"/>
+            <property name="targetObjectApiName" type="String" label="Recommended Object Type" description="The API name of the object type you want to display recommendations for (e.g., Product2, SME__c, Problem_to_Solve__c)" default="Product2"/>
+            <property name="fieldsList" type="String" label="Fields to Display" description="Comma-separated API names of fields to show on the carousel cards" default="Name,Description"/>
         </targetConfig>
     </targetConfigs>
 </LightningComponentBundle>

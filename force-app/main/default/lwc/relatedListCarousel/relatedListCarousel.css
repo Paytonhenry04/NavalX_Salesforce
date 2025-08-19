@@ -87,8 +87,8 @@
     position: relative;
     overflow: visible;
     padding: 3rem 1rem;
-    width: 75vw;
-    height: 75vh;
+    width: 65vw;
+    height: 65vh;
     margin: 0 auto;
     box-sizing: border-box;
     background: linear-gradient(135deg, #3555e3 0%, #0317a9 100%);
@@ -111,8 +111,8 @@
    ================================ */
 .record-card {
     position: absolute;
-    width: 60vw;
-    height: 65vh;
+    width: 55vw;
+    height: 55vh;
     border-radius: 1rem;
     background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
     color: #2c2c2c;

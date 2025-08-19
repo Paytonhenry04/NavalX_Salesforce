@@ -1,16 +1,11 @@
 import { LightningElement, api, track } from 'lwc';
-import getRelatedRecords from '@salesforce/apex/RelatedRecordsController.getRelatedRecords';
+import getRecommendations from '@salesforce/apex/RecommendationController.getRecommendations';
 import { NavigationMixin } from 'lightning/navigation';
 
 export default class RelatedListCarousel extends NavigationMixin(LightningElement) {
     @api recordId;
-    @api parentObjectApiName;
-    @api childObjectApiName;
-    @api lookupFieldApiName;
-    @api childRelationshipName;
-    @api fieldsList;
-    @api flexipageId;
-    @api cmpId;
+    @api targetObjectApiName; // Which object type to display (e.g., 'Product2')
+    @api fieldsList; // comma-separated API names for dynamic fields
 
     @track tableData = [];
     @track error;
@@ -34,10 +29,13 @@ export default class RelatedListCarousel extends NavigationMixin(LightningElemen
     }
 
     get cardTitle() {
-        if (this.childRelationshipName) {
-            return `Related ${this.childRelationshipName.replace(/__r$/, '')}`;
+        if (!this.targetObjectApiName) {
+            return 'Recommended Records';
         }
-        return 'Related Records';
+        
+        // Convert API name to readable label
+        const objectLabel = this.getObjectLabel(this.targetObjectApiName);
+        return `Recommended ${objectLabel}`;
     }
 
     get hasRecords() {
@@ -67,31 +65,31 @@ export default class RelatedListCarousel extends NavigationMixin(LightningElemen
     }
 
     connectedCallback() {
-        this.fetchAllRelatedRecords();
+        if (this.recordId && this.targetObjectApiName) {
+            this.fetchRecommendations();
+        } else {
+            this.error = 'Configuration error: recordId and targetObjectApiName are required.';
+        }
     }
 
-    fetchAllRelatedRecords() {
-        if (!this.recordId || !this.childObjectApiName || !this.lookupFieldApiName || !this.fieldsList) {
-            this.error = 'Configuration error: check childObjectApiName, lookupFieldApiName, and fieldsList.';
-            this.tableData = [];
-            return;
-        }
+    fetchRecommendations() {
+        let fields = this.fieldsArray;
+        console.log('Fetching recommendations with fields:', fields);
 
-        getRelatedRecords({
-            parentId: this.recordId,
-            childObjectApiName: this.childObjectApiName,
-            lookupFieldApiName: this.lookupFieldApiName,
-            fieldsString: this.fieldsList,
-            limitSize: 200
+        getRecommendations({ 
+            recordId: this.recordId, 
+            targetObjectApiName: this.targetObjectApiName,
+            fieldApiNames: fields 
         })
         .then(results => {
-            const firstFld = this.firstField;
+            console.log('Received recommendations:', results);
+            
             const addFlds = this.additionalFields;
 
             this.tableData = results.map((rec, index) => {
-                const fields = addFlds.map(fld => {
-                    const rawValue = rec[fld];
-                    const isImageField = (fld === 'current_product_image__c');
+                const fieldsData = addFlds.map(fld => {
+                    const rawValue = rec.fields[fld];
+                    const isImageField = (fld === 'current_product_image__c' || fld.toLowerCase().includes('image'));
                     let displayValue = rawValue;
 
                     if (isImageField && rawValue) {
@@ -106,21 +104,32 @@ export default class RelatedListCarousel extends NavigationMixin(LightningElemen
                     };
                 });
 
+                // Add score field if not already in the list
+                if (rec.score && !addFlds.includes('score')) {
+                    fieldsData.push({
+                        label: 'Recommendation Score',
+                        value: rec.score.toFixed(2),
+                        apiName: 'score',
+                        isImage: false
+                    });
+                }
+
                 return {
-                    Id: rec.Id,
-                    title: rec[firstFld] || `Record ${index + 1}`,
-                    url: '/' + rec.Id,
-                    fields: fields
+                    Id: rec.recordId,
+                    title: rec.name || `Record ${index + 1}`,
+                    url: '/' + rec.recordId,
+                    fields: fieldsData,
+                    score: rec.score
                 };
             });
 
             this.error = undefined;
-            // Start with first item (index 0)
             this.currentIndex = 0;
             this.updateCardClasses();
         })
         .catch(err => {
-            this.error = err.body && err.body.message ? err.body.message : JSON.stringify(err);
+            console.error('Error fetching recommendations:', err);
+            this.error = err.body?.message || err.message || 'Error fetching recommendations';
             this.tableData = [];
             this.currentIndex = 0;
         });
@@ -130,25 +139,10 @@ export default class RelatedListCarousel extends NavigationMixin(LightningElemen
         this.isCollapsed = !this.isCollapsed;
     }
 
-    // handleHeaderClick() {
-    //     if (this.flexipageId && this.cmpId) {
-    //         const url = '/lightning/cmp/force__dynamicRelatedListViewAll' +
-    //             `?force__flexipageId=${this.flexipageId}` +
-    //             `&force__cmpId=${this.cmpId}` +
-    //             `&force__recordId=${this.recordId}`;
-    //         window.open(url, '_self');
-    //         return;
-    //     }
-    //     this[NavigationMixin.Navigate]({
-    //         type: 'standard__recordRelationshipPage',
-    //         attributes: {
-    //             recordId: this.recordId,
-    //             objectApiName: this.parentObjectApiName,
-    //             relationshipApiName: this.childRelationshipName,
-    //             actionName: 'view'
-    //         }
-    //     });
-    // }
+    handleHeaderClick() {
+        // Navigate to full list view if needed
+        console.log('Header clicked - could navigate to full recommendations view');
+    }
 
     handlePrevious() {
         if (this.tableData.length <= 1) return;
@@ -178,10 +172,12 @@ export default class RelatedListCarousel extends NavigationMixin(LightningElemen
         this.tableData = this.tableData.map((rec, index) => {
             const position = index - this.currentIndex;
             let cardClass = 'record-card';
+            let isActive = false;
 
             // Stack cards: active (current), middle (next), bottom (next+1)
             if (position === 0) {
                 cardClass += ' card-active';
+                isActive = true; // This card gets the item number
             } else if (position === 1 || (this.currentIndex === this.tableData.length - 1 && index === 0)) {
                 // Show next card, or first card if we're at the last item
                 cardClass += ' card-middle';
@@ -197,12 +193,38 @@ export default class RelatedListCarousel extends NavigationMixin(LightningElemen
             return { 
                 ...rec, 
                 cardClass,
-                position: position
+                position: position,
+                isActive: isActive
             };
         });
     }
 
+    getObjectLabel(apiName) {
+        // Map common Salesforce objects to their proper labels
+        const objectLabelMap = {
+            'Product2': 'Products',
+            'Account': 'Accounts', 
+            'Contact': 'Contacts',
+            'Lead': 'Leads',
+            'Opportunity': 'Opportunities',
+            'Case': 'Cases',
+            'User': 'Users',
+            'Campaign': 'Campaigns',
+            'Task': 'Tasks',
+            'Event': 'Events'
+        };
+        
+        // Check if it's a known standard object
+        if (objectLabelMap[apiName]) {
+            return objectLabelMap[apiName];
+        }
+        
+        // For custom objects, humanize the API name
+        return this.humanizeLabel(apiName);
+    }
+
     humanizeLabel(apiName) {
+        if (!apiName) return '';
         return apiName
             .replace(/__c$|__r$/, '')
             .replace(/_/g, ' ')
