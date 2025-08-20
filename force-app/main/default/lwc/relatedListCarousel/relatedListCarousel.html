@@ -1,21 +1,5 @@
 <template>
     <lightning-card class="custom-card-container">
-        <!-- Header -->
-        <div class="custom-card-header">
-            <div class="header-box">
-                <lightning-icon
-                    icon-name={collapseIconName}
-                    alternative-text="Toggle"
-                    class="collapse-icon"
-                    size="x-small"
-                    onclick={toggleCollapse}>
-                </lightning-icon>
-                <span class="custom-card-title" onclick={handleHeaderClick}>
-                    {cardTitle}
-                </span>
-            </div>
-        </div>
-
         <!-- Body -->
         <template if:false={isCollapsed}>
             <div class="custom-card-body">
@@ -51,6 +35,13 @@
                             <template for:each={tableData} for:item="rec">
                                 <div key={rec.Id} class={rec.cardClass} data-position={rec.position}>
                                     <div class="record-card-content">
+                                        <div class="custom-card-header">
+                                            <div class="header-box">
+                                                <span class="custom-card-title">
+                                                    {cardTitle}
+                                                </span>
+                                            </div>
+                                        </div>
                                         <span class="carousel-info">{carouselInfo}</span>
                                         <div class="record-card-title">
                                             <a href={rec.url} class="record-card-link">{rec.title}</a>
