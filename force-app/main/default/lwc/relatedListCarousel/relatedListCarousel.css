@@ -91,7 +91,7 @@
     position: relative;
     overflow: visible;
     padding: 3rem 1rem;
-    width: 65vw;
+    width: 67vw;
     height: 65vh;
     margin: 0 auto;
     box-sizing: border-box;
@@ -245,7 +245,7 @@
     color: #2c2c2c;
     word-wrap: break-word;
     line-height: 1;
-    font-size: 0.7rem;
+    font-size: 0.8rem;
 }
 
 .field-image {
@@ -273,11 +273,11 @@
 }
 
 .carousel-nav-left {
-    left: 1rem;
+    left: 0.2rem;
 }
 
 .carousel-nav-right {
-    right: 1rem;
+    right: 0.2rem;
 }
 
 .side-nav-button {

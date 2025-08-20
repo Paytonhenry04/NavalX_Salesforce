@@ -64,6 +64,28 @@ export default class RelatedListCarousel extends NavigationMixin(LightningElemen
         return `${current} of ${total}`;
     }
 
+    // NEW METHOD: Convert URLs to clickable links (excludes emails)
+    makeLinksClickable(text) {
+        if (!text || typeof text !== 'string') return text;
+        
+        // Regex to detect URLs but exclude email addresses
+        // This looks for URLs that start with http/https or www, or domain patterns
+        // but excludes anything that has @ in it (emails)
+        const urlRegex = /(?<!\S)(https?:\/\/[^\s<>"{}|\\^`[\]@]+|www\.[^\s<>"{}|\\^`[\]@]+|(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?\.)+[a-zA-Z]{2,}(?:\/[^\s@]*)?)(?!\S)/gi;
+        
+        return text.replace(urlRegex, (match) => {
+            // Double-check: skip if it contains @ (email)
+            if (match.includes('@')) return match;
+            
+            let href = match;
+            // Add protocol if missing
+            if (!match.startsWith('http://') && !match.startsWith('https://')) {
+                href = 'https://' + match;
+            }
+            return `<a href="${href}" target="_blank" rel="noopener noreferrer">${match}</a>`;
+        });
+    }
+
     connectedCallback() {
         if (this.recordId && this.targetObjectApiName) {
             this.fetchRecommendations();
@@ -94,13 +116,17 @@ export default class RelatedListCarousel extends NavigationMixin(LightningElemen
 
                     if (isImageField && rawValue) {
                         displayValue = `/sfc/servlet.shepherd/document/download/${rawValue}`;
+                    } else if (!isImageField && rawValue) {
+                        // MODIFIED: Apply link conversion to non-image fields
+                        displayValue = this.makeLinksClickable(String(rawValue));
                     }
 
                     return {
                         label: this.humanizeLabel(fld),
                         value: displayValue,
                         apiName: fld,
-                        isImage: isImageField && Boolean(rawValue)
+                        isImage: isImageField && Boolean(rawValue),
+                        hasLinks: !isImageField && displayValue !== rawValue // NEW: Track if field contains links
                     };
                 });
 
@@ -110,7 +136,8 @@ export default class RelatedListCarousel extends NavigationMixin(LightningElemen
                         label: 'Recommendation Score',
                         value: rec.score.toFixed(2),
                         apiName: 'score',
-                        isImage: false
+                        isImage: false,
+                        hasLinks: false
                     });
                 }
 

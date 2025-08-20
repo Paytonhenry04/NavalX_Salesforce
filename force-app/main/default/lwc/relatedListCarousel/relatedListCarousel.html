@@ -63,7 +63,15 @@
                                                         <img src={fld.value} alt={fld.label} class="field-image" />
                                                     </template>
                                                     <template if:false={fld.isImage}>
-                                                        <span class="field-value">{fld.value}</span>
+                                                        <template if:true={fld.hasLinks}>
+                                                            <lightning-formatted-rich-text 
+                                                                value={fld.value} 
+                                                                class="field-value">
+                                                            </lightning-formatted-rich-text>
+                                                        </template>
+                                                        <template if:false={fld.hasLinks}>
+                                                            <span class="field-value">{fld.value}</span>
+                                                        </template>
                                                     </template>
                                                 </div>
                                             </template>
