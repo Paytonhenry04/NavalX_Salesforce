@@ -78,10 +78,21 @@ public with sharing class CarouselController {
                 fieldsToQuery += ', Name';
             }
             
+            // ✅ FIX: Validate fields before adding them to the query
             if (fieldApiNames != null && !fieldApiNames.isEmpty()) {
+                Schema.SObjectType objectType = Schema.getGlobalDescribe().get(targetObjectApiName);
+                Map<String, Schema.SObjectField> validFields = new Map<String, Schema.SObjectField>();
+                if (objectType != null) {
+                    validFields = objectType.getDescribe().fields.getMap();
+                }
+
                 for (String field : fieldApiNames) {
                     if (field != 'Id' && field != 'Name') {
-                        fieldsToQuery += ', ' + field;
+                        if (validFields.containsKey(field)) {
+                            fieldsToQuery += ', ' + field;
+                        } else {
+                            System.debug('Skipping invalid field: ' + field);
+                        }
                     }
                 }
             }
