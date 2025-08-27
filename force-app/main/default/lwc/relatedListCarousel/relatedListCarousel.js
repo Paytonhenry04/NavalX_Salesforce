@@ -1,5 +1,5 @@
 import { LightningElement, api, track } from 'lwc';
-import getRecommendations from '@salesforce/apex/RecommendationController.getRecommendations';
+import getRecommendations from '@salesforce/apex/CarouselController.getRecommendations';
 import { NavigationMixin } from 'lightning/navigation';
 
 export default class RelatedListCarousel extends NavigationMixin(LightningElement) {
@@ -131,10 +131,10 @@ export default class RelatedListCarousel extends NavigationMixin(LightningElemen
                 });
 
                 // Add score field if not already in the list
-                if (rec.score && !addFlds.includes('score')) {
+                if (rec.score !== null && rec.score !== undefined && !addFlds.includes('score')) {
                     fieldsData.push({
                         label: 'Recommendation Score',
-                        value: rec.score.toFixed(2),
+                        value: Number(rec.score).toFixed(2),
                         apiName: 'score',
                         isImage: false,
                         hasLinks: false

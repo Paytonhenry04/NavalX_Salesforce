@@ -1,4 +1,4 @@
-public with sharing class RecommendationController {
+public with sharing class CarouselController {
 
     public class RecommendationWrapper {
         @AuraEnabled public Id recordId;
