@@ -1,0 +1,5 @@
+{
+  "title" : "QueryResult",
+  "description" : "Formatted SQL Query Results",
+  "lightning:type" : "@apexClassType/c__QueryResult"
+}

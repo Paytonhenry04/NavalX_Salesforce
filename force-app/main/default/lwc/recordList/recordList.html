@@ -1,0 +1,22 @@
+<template>
+    <!-- Only render if we should show records -->
+    <template if:true={shouldShowComponent}>
+        <lightning-card title="Records">
+            <div style="margin: 1rem;">
+                <template for:each={records} for:item="record">
+                    <div key={record.key} style="margin-bottom: 0.5rem;">
+                        <span>#{record.number} </span>
+                        <template if:true={record.url}>
+                            <a href={record.url} target="_blank">
+                                <strong>{record.name}</strong>
+                            </a>
+                        </template>
+                        <template if:false={record.url}>
+                            <strong>{record.name}</strong>
+                        </template>
+                    </div>
+                </template>
+            </div>
+        </lightning-card>
+    </template>
+</template>

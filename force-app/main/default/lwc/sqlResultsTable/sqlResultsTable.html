@@ -1,0 +1,105 @@
+<template>
+  <div class="sql-results-container">
+    <!-- Header Section -->
+    <div class="results-header">
+      <div class="header-main">
+        <lightning-icon icon-name="utility:database" size="small" class="header-icon"></lightning-icon>
+        <h3 class="results-title">Query Results</h3>
+        <span class="status-badge">
+          <lightning-icon icon-name="utility:success" size="xx-small"></lightning-icon>
+          {totalRowsLabel}
+        </span>
+      </div>
+      
+      <div class="execution-info">
+        <span class="info-item">
+          <lightning-icon icon-name="utility:clock" size="xx-small"></lightning-icon>
+          {executionTime}
+        </span>
+        <span class="info-item">
+          <lightning-icon icon-name="utility:matrix" size="xx-small"></lightning-icon>
+          {columnCount} columns
+        </span>
+      </div>
+    </div>
+
+    <!-- Content Display -->
+    <template if:true={showTable}>
+      <!-- Text-based List View -->
+      <div class="text-results-container">
+        <template for:each={processedRows} for:item="row" for:index="index">
+          <div key={row.id} class="result-row">
+            <div class="row-header">
+              <span class="row-number">#{row.displayIndex}</span>
+            </div>
+            <div class="row-content">
+              <template for:each={row.cells} for:item="cell">
+                <span key={cell.key} class="field-pair">
+                  <strong class="field-name">{cell.key}:</strong>
+                  <span class="field-value" title={cell.fullValue}>
+                    <template if:true={cell.isLink}>
+                      <lightning-formatted-url
+                        value={cell.value}
+                        label="Open Record"
+                        target="_blank">
+                      </lightning-formatted-url>
+                    </template>
+                    <template if:false={cell.isLink}>
+                      {cell.displayValue}
+                    </template>
+                  </span>
+                </span>
+              </template>
+            </div>
+          </div>
+        </template>
+        
+        <template if:true={hasMoreRows}>
+          <div class="pagination-controls">
+            <span class="pagination-text">
+              Showing {displayedRowCount} of {totalRows} rows
+            </span>
+            <template if:true={canLoadMore}>
+              <lightning-button 
+                label="Show More" 
+                onclick={loadMoreRows}
+                variant="neutral"
+                size="small"
+                class="load-more-btn">
+              </lightning-button>
+            </template>
+          </div>
+        </template>
+      </div>
+    </template>
+
+    <template if:true={showJson}>
+      <!-- JSON View -->
+      <div class="json-container">
+        <div class="json-header">
+          <span class="json-title">Raw JSON Data</span>
+          <lightning-button-icon 
+            icon-name="utility:copy" 
+            size="small" 
+            variant="border-filled"
+            onclick={copyJsonContent}
+            title="Copy JSON to clipboard"
+            class="copy-json-btn">
+          </lightning-button-icon>
+        </div>
+        <div class="json-content">
+          <pre class="json-display">{formattedJson}</pre>
+        </div>
+      </div>
+    </template>
+
+    <!-- Empty State -->
+    <template if:false={hasData}>
+      <div class="empty-state">
+        <lightning-icon icon-name="utility:info" size="medium" class="empty-icon"></lightning-icon>
+        <h3 class="empty-title">No Data Available</h3>
+        <p class="empty-message">The query returned no results.</p>
+      </div>
+    </template>
+  </div>
+</template>

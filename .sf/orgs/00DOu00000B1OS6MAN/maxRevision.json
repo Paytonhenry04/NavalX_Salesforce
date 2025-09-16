@@ -1,0 +1,990 @@
+{
+    "fileVersion": 0,
+    "serverMaxRevisionCounter": 1819,
+    "sourceMembers": {
+        "CustomMetadata__Query_Engine_Object_Schema.Product2_Home_dlm": {
+            "memberType": "CustomMetadata",
+            "serverRevisionCounter": 776,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "InternalDataConnector__SalesforceDotCom_Dev2": {
+            "memberType": "InternalDataConnector",
+            "serverRevisionCounter": 72,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "InternalDataConnector__SalesforceDotCom_Home": {
+            "memberType": "InternalDataConnector",
+            "serverRevisionCounter": 673,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "MktDataConnection__UploadedFiles": {
+            "memberType": "MktDataConnection",
+            "serverRevisionCounter": 74,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "MktDataConnection__TenantBillingUsageEvent": {
+            "memberType": "MktDataConnection",
+            "serverRevisionCounter": 75,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "DataPackageKitDefinition__Matching_Agent": {
+            "memberType": "DataPackageKitDefinition",
+            "serverRevisionCounter": 76,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "Profile__StudentDevLeads": {
+            "memberType": "Profile",
+            "serverRevisionCounter": 1485,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "ApexClass__DynamicObjectSelector": {
+            "memberType": "ApexClass",
+            "serverRevisionCounter": 421,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "ApexClass__DatacloudSQLExecuter": {
+            "memberType": "ApexClass",
+            "serverRevisionCounter": 1791,
+            "lastRetrievedFromServer": 1456,
+            "isNameObsolete": false
+        },
+        "GenAiPromptTemplate__Dynamic_Object_SQL_Converter_DOSC": {
+            "memberType": "GenAiPromptTemplate",
+            "serverRevisionCounter": 1789,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "PermissionSet__sfdcInternalInt__sfdc_chatbot": {
+            "memberType": "PermissionSet",
+            "serverRevisionCounter": 10,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "BotVersion__Copilot_for_Salesforce.v8": {
+            "memberType": "BotVersion",
+            "serverRevisionCounter": 26,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "GenAiPlanner__EmployeeCopilotPlanner_v2_v3_v4_v5_v6_v7_v8": {
+            "memberType": "GenAiPlanner",
+            "serverRevisionCounter": 22,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "GenAiFunction__CustomKnowledgeAction_1752183167670_v2_v3_v4_v5_v6_v7_v8": {
+            "memberType": "GenAiFunction",
+            "serverRevisionCounter": 24,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "GenAiPlugin__Query_Engine": {
+            "memberType": "GenAiPlugin",
+            "serverRevisionCounter": 1768,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "Flow__Dynamic_Object_Query_DOQ": {
+            "memberType": "Flow",
+            "serverRevisionCounter": 1527,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "CustomMetadata__Query_Engine_Object_Schema.Experimentation_and_Assessment_c_Ho_dlm": {
+            "memberType": "CustomMetadata",
+            "serverRevisionCounter": 778,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "Layout__Query_Engine_Object_Schema__mdt-Query Engine Object Schema Layout": {
+            "memberType": "Layout",
+            "serverRevisionCounter": 335,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "Profile__DINA API Only With Full Objects Access": {
+            "memberType": "Profile",
+            "serverRevisionCounter": 164,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "PermissionSet__sfdcInternalInt__sfdc_a360_sfcrm_data_extract": {
+            "memberType": "PermissionSet",
+            "serverRevisionCounter": 168,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "Profile__Salesforce API Only System Integrations": {
+            "memberType": "Profile",
+            "serverRevisionCounter": 165,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "Profile__NPS AI Task Force Customer": {
+            "memberType": "Profile",
+            "serverRevisionCounter": 167,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "Profile__NavalXCustomer": {
+            "memberType": "Profile",
+            "serverRevisionCounter": 166,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "Profile__StudentDeveloper": {
+            "memberType": "Profile",
+            "serverRevisionCounter": 169,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "Profile__Read Only": {
+            "memberType": "Profile",
+            "serverRevisionCounter": 170,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "Profile__End User": {
+            "memberType": "Profile",
+            "serverRevisionCounter": 171,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "Profile__DIUCustomer": {
+            "memberType": "Profile",
+            "serverRevisionCounter": 172,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "Profile__Admin": {
+            "memberType": "Profile",
+            "serverRevisionCounter": 174,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "Profile__Executive Sponsor": {
+            "memberType": "Profile",
+            "serverRevisionCounter": 175,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "CustomObject__Query_Engine_Object_Schema__mdt": {
+            "memberType": "CustomObject",
+            "serverRevisionCounter": 57,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "CustomMetadata__Query_Engine_Object_Schema.Company_c_Home_dlm": {
+            "memberType": "CustomMetadata",
+            "serverRevisionCounter": 1158,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "CustomField__Query_Engine_Object_Schema__mdt.Object_Schema__c": {
+            "memberType": "CustomField",
+            "serverRevisionCounter": 59,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "CustomMetadata__Query_Engine_Object_Schema.SBIR_Award_c_DMO_dlm": {
+            "memberType": "CustomMetadata",
+            "serverRevisionCounter": 779,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "CustomMetadata__Query_Engine_Object_Schema.Subject_Matter_Expert_c_Home_dlm": {
+            "memberType": "CustomMetadata",
+            "serverRevisionCounter": 780,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "CustomField__Researcher__c.LinkedIn__c": {
+            "memberType": "CustomField",
+            "serverRevisionCounter": 111,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "CustomField__Researcher__c.Website__c": {
+            "memberType": "CustomField",
+            "serverRevisionCounter": 112,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "Layout__Researcher__c-Researcher Layout": {
+            "memberType": "Layout",
+            "serverRevisionCounter": 95,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "CustomObject__Researcher__c": {
+            "memberType": "CustomObject",
+            "serverRevisionCounter": 118,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "CustomField__Researcher__c.First_Name__c": {
+            "memberType": "CustomField",
+            "serverRevisionCounter": 104,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "CustomField__Researcher__c.Last_Name__c": {
+            "memberType": "CustomField",
+            "serverRevisionCounter": 105,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "CustomField__Researcher__c.Phone_Number__c": {
+            "memberType": "CustomField",
+            "serverRevisionCounter": 106,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "CustomField__Researcher__c.Email__c": {
+            "memberType": "CustomField",
+            "serverRevisionCounter": 107,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "CustomField__Researcher__c.Area_of_Research__c": {
+            "memberType": "CustomField",
+            "serverRevisionCounter": 108,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "CustomField__Researcher__c.Industry__c": {
+            "memberType": "CustomField",
+            "serverRevisionCounter": 109,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "CustomField__Researcher__c.Country__c": {
+            "memberType": "CustomField",
+            "serverRevisionCounter": 110,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "CustomField__Researcher__c.Research_Paper_Links__c": {
+            "memberType": "CustomField",
+            "serverRevisionCounter": 113,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "CustomField__Researcher__c.ORCID_ID__c": {
+            "memberType": "CustomField",
+            "serverRevisionCounter": 114,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "CustomField__Researcher__c.Title__c": {
+            "memberType": "CustomField",
+            "serverRevisionCounter": 115,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "CustomField__Researcher__c.Google_Scholar_Profile__c": {
+            "memberType": "CustomField",
+            "serverRevisionCounter": 116,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "CustomField__Researcher__c.Primary_Lab__c": {
+            "memberType": "CustomField",
+            "serverRevisionCounter": 117,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "CustomField__Researcher__c.Active_Awards__c": {
+            "memberType": "CustomField",
+            "serverRevisionCounter": 119,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "CustomField__Researcher__c.Award_Amount__c": {
+            "memberType": "CustomField",
+            "serverRevisionCounter": 121,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "CustomField__Project__c.Project_Number__c": {
+            "memberType": "CustomField",
+            "serverRevisionCounter": 183,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "Layout__Project__c-Project Layout": {
+            "memberType": "Layout",
+            "serverRevisionCounter": 128,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "CustomObject__Project__c": {
+            "memberType": "CustomObject",
+            "serverRevisionCounter": 180,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "CustomField__Project__c.Contact_Phone__c": {
+            "memberType": "CustomField",
+            "serverRevisionCounter": 176,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "CustomField__Project__c.Project_Researcher__c": {
+            "memberType": "CustomField",
+            "serverRevisionCounter": 137,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "CustomField__Project__c.Company__c": {
+            "memberType": "CustomField",
+            "serverRevisionCounter": 139,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "CustomField__Project__c.Area_of_Research__c": {
+            "memberType": "CustomField",
+            "serverRevisionCounter": 141,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "CustomField__Project__c.MRL__c": {
+            "memberType": "CustomField",
+            "serverRevisionCounter": 142,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "CustomField__Project__c.TRL__c": {
+            "memberType": "CustomField",
+            "serverRevisionCounter": 143,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "CustomField__Project__c.Abstract__c": {
+            "memberType": "CustomField",
+            "serverRevisionCounter": 144,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "CustomField__Project__c.Plan__c": {
+            "memberType": "CustomField",
+            "serverRevisionCounter": 145,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "CustomField__Project__c.Contract__c": {
+            "memberType": "CustomField",
+            "serverRevisionCounter": 182,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "CustomField__Project__c.Contract_Email__c": {
+            "memberType": "CustomField",
+            "serverRevisionCounter": 148,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": true
+        },
+        "CustomField__Project__c.Contact_Email__c": {
+            "memberType": "CustomField",
+            "serverRevisionCounter": 149,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "CustomField__Project__c.Contact__c": {
+            "memberType": "CustomField",
+            "serverRevisionCounter": 163,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "CustomField__Project__c.Use_Case__c": {
+            "memberType": "CustomField",
+            "serverRevisionCounter": 177,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "CustomField__Project__c.Website__c": {
+            "memberType": "CustomField",
+            "serverRevisionCounter": 178,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "CustomField__Project__c.Problem__c": {
+            "memberType": "CustomField",
+            "serverRevisionCounter": 179,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "CustomField__Project__c.Status__c": {
+            "memberType": "CustomField",
+            "serverRevisionCounter": 181,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "CustomField__Project__c.Sponsoring_Agency__c": {
+            "memberType": "CustomField",
+            "serverRevisionCounter": 184,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "CustomField__Project__c.Contract_Type__c": {
+            "memberType": "CustomField",
+            "serverRevisionCounter": 185,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "CustomField__Project__c.Instrument_Type__c": {
+            "memberType": "CustomField",
+            "serverRevisionCounter": 186,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "CustomField__Project__c.Award_Ceiling__c": {
+            "memberType": "CustomField",
+            "serverRevisionCounter": 187,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "CustomField__Project__c.Next_Report_Due__c": {
+            "memberType": "CustomField",
+            "serverRevisionCounter": 188,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "CustomField__Project__c.Risk_Level__c": {
+            "memberType": "CustomField",
+            "serverRevisionCounter": 189,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "ApexTrigger__SMERecommendationTrigger": {
+            "memberType": "ApexTrigger",
+            "serverRevisionCounter": 190,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "ApexTrigger__ProblemRecommendationTrigger": {
+            "memberType": "ApexTrigger",
+            "serverRevisionCounter": 191,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "ApexTrigger__MeetingTrigger": {
+            "memberType": "ApexTrigger",
+            "serverRevisionCounter": 193,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "CustomField__Experimentation_and_Assessment__c.Collaborators__c": {
+            "memberType": "CustomField",
+            "serverRevisionCounter": 196,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "CustomObject__Experimentation_and_Assessment__c": {
+            "memberType": "CustomObject",
+            "serverRevisionCounter": 195,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "PermissionSet__StudentDev_Object_Editor": {
+            "memberType": "PermissionSet",
+            "serverRevisionCounter": 198,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "PolicyRuleDefinitionSet__AllDataAccessRuleset": {
+            "memberType": "PolicyRuleDefinitionSet",
+            "serverRevisionCounter": 199,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "PolicyRuleDefinition__AllDataAccessRule": {
+            "memberType": "PolicyRuleDefinition",
+            "serverRevisionCounter": 201,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "PermissionSetGroup__force__AgentforceServiceAgentUserPsg": {
+            "memberType": "PermissionSetGroup",
+            "serverRevisionCounter": 305,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "PermissionSetGroup__force__Manage_ASC_Analytics": {
+            "memberType": "PermissionSetGroup",
+            "serverRevisionCounter": 304,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "GenAiPromptTemplate__Object_Query_Detector_OQD": {
+            "memberType": "GenAiPromptTemplate",
+            "serverRevisionCounter": 213,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": true
+        },
+        "GenAiPromptTemplate__Object_Schema_Detector_OSD": {
+            "memberType": "GenAiPromptTemplate",
+            "serverRevisionCounter": 312,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "CustomField__Query_Engine_Object_Schema__mdt.Name__c": {
+            "memberType": "CustomField",
+            "serverRevisionCounter": 334,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "CustomObject__Problem_To_Solve_c_Dev2": {
+            "memberType": "CustomObject",
+            "serverRevisionCounter": 668,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": true
+        },
+        "CustomObject__Problem_To_Solve_c_Dev2__dll": {
+            "memberType": "CustomObject",
+            "serverRevisionCounter": 669,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": true
+        },
+        "CustomObject__Subject_Matter_Expert_c_Dev2": {
+            "memberType": "CustomObject",
+            "serverRevisionCounter": 670,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": true
+        },
+        "CustomObject__Subject_Matter_Expert_c_Dev2__dll": {
+            "memberType": "CustomObject",
+            "serverRevisionCounter": 671,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": true
+        },
+        "ObjectSourceTargetMap__Subject_Matter_Expert_c_Dev2_map_Subject_Matter_Expert_c_Dev2_1754424367506": {
+            "memberType": "ObjectSourceTargetMap",
+            "serverRevisionCounter": 667,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "ObjectSourceTargetMap__Problem_To_Solve_c_Dev2_map_Problem_To_Solve_c_Dev2_1754424367526": {
+            "memberType": "ObjectSourceTargetMap",
+            "serverRevisionCounter": 662,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "DataSourceTenant__SalesforceDotCom_Home": {
+            "memberType": "DataSourceTenant",
+            "serverRevisionCounter": 672,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "CustomObject__StaticCurrencyRates_Home1": {
+            "memberType": "CustomObject",
+            "serverRevisionCounter": 699,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "CustomObject__StaticCurrencyRates_Home1__dll": {
+            "memberType": "CustomObject",
+            "serverRevisionCounter": 700,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "CustomField__StaticCurrencyRates_Home1.KQ_Id__c": {
+            "memberType": "CustomField",
+            "serverRevisionCounter": 678,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "CustomField__StaticCurrencyRates_Home1.Id__c": {
+            "memberType": "CustomField",
+            "serverRevisionCounter": 687,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "CustomField__StaticCurrencyRates_Home1.FromISOCurrencyCode__c": {
+            "memberType": "CustomField",
+            "serverRevisionCounter": 688,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "CustomField__StaticCurrencyRates_Home1.ToISOCurrencyCode__c": {
+            "memberType": "CustomField",
+            "serverRevisionCounter": 689,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "CustomField__StaticCurrencyRates_Home1.RateNumeratorNumber__c": {
+            "memberType": "CustomField",
+            "serverRevisionCounter": 690,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "CustomField__StaticCurrencyRates_Home1.RateDenominatorNumber__c": {
+            "memberType": "CustomField",
+            "serverRevisionCounter": 691,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "CustomField__StaticCurrencyRates_Home1.DataSource__c": {
+            "memberType": "CustomField",
+            "serverRevisionCounter": 692,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "CustomField__StaticCurrencyRates_Home1.DataSourceObject__c": {
+            "memberType": "CustomField",
+            "serverRevisionCounter": 693,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "CustomField__StaticCurrencyRates_Home1.InternalOrganization__c": {
+            "memberType": "CustomField",
+            "serverRevisionCounter": 694,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "CustomObject__StaticCurrencyRates_Home": {
+            "memberType": "CustomObject",
+            "serverRevisionCounter": 769,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "CustomObject__StaticCurrencyRates_Home__dlm": {
+            "memberType": "CustomObject",
+            "serverRevisionCounter": 771,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "CustomField__StaticCurrencyRates_Home.InternalOrganizationId__c": {
+            "memberType": "CustomField",
+            "serverRevisionCounter": 767,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "CustomField__StaticCurrencyRates_Home.ToISOCurrencyCode__c": {
+            "memberType": "CustomField",
+            "serverRevisionCounter": 765,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "CustomField__StaticCurrencyRates_Home.FromISOCurrencyCode__c": {
+            "memberType": "CustomField",
+            "serverRevisionCounter": 764,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "CustomField__StaticCurrencyRates_Home.RateDenominatorNumber__c": {
+            "memberType": "CustomField",
+            "serverRevisionCounter": 761,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "CustomField__StaticCurrencyRates_Home.DataSourceId__c": {
+            "memberType": "CustomField",
+            "serverRevisionCounter": 763,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "CustomField__StaticCurrencyRates_Home.RateNumeratorNumber__c": {
+            "memberType": "CustomField",
+            "serverRevisionCounter": 760,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "CustomField__StaticCurrencyRates_Home.KQ_Id__c": {
+            "memberType": "CustomField",
+            "serverRevisionCounter": 762,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "CustomField__StaticCurrencyRates_Home.Id__c": {
+            "memberType": "CustomField",
+            "serverRevisionCounter": 759,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "CustomField__StaticCurrencyRates_Home.DataSourceObjectId__c": {
+            "memberType": "CustomField",
+            "serverRevisionCounter": 766,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "ObjectSourceTargetMap__StaticCurrencyRates_Home1_map_StaticCurrencyRates_Home_1757519040623": {
+            "memberType": "ObjectSourceTargetMap",
+            "serverRevisionCounter": 768,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "GenAiFunction__Query_Engine": {
+            "memberType": "GenAiFunction",
+            "serverRevisionCounter": 788,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "ApexClass__SimpleJSONFormatter": {
+            "memberType": "ApexClass",
+            "serverRevisionCounter": 792,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "ApexClass__QueryResult": {
+            "memberType": "ApexClass",
+            "serverRevisionCounter": 1073,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "ApexClass__KeyValue": {
+            "memberType": "ApexClass",
+            "serverRevisionCounter": 1070,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "ApexClass__Row": {
+            "memberType": "ApexClass",
+            "serverRevisionCounter": 1071,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "LightningComponentBundle__sqlResultsTable": {
+            "memberType": "LightningComponentBundle",
+            "serverRevisionCounter": 1431,
+            "lastRetrievedFromServer": 1431,
+            "isNameObsolete": false
+        },
+        "LightningComponentResource__sqlResultsTable/sqlResultsTable.js": {
+            "memberType": "LightningComponentResource",
+            "serverRevisionCounter": 1432,
+            "lastRetrievedFromServer": 1432,
+            "isNameObsolete": false
+        },
+        "LightningComponentResource__sqlResultsTable/sqlResultsTable.html": {
+            "memberType": "LightningComponentResource",
+            "serverRevisionCounter": 1433,
+            "lastRetrievedFromServer": 1433,
+            "isNameObsolete": false
+        },
+        "LightningComponentResource__sqlResultsTable/sqlResultsTable.js-meta.xml": {
+            "memberType": "LightningComponentResource",
+            "serverRevisionCounter": 1434,
+            "lastRetrievedFromServer": 1434,
+            "isNameObsolete": false
+        },
+        "LightningComponentResource__sqlResultsTable/sqlResultsTable.css": {
+            "memberType": "LightningComponentResource",
+            "serverRevisionCounter": 1435,
+            "lastRetrievedFromServer": 1435,
+            "isNameObsolete": false
+        },
+        "LightningTypeBundle__sqlQueryResult": {
+            "memberType": "LightningTypeBundle",
+            "serverRevisionCounter": 1383,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "GenAiFunction__Execute_Datacloud_SQL": {
+            "memberType": "GenAiFunction",
+            "serverRevisionCounter": 1380,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "GenAiFunction__Query_Engine_V2": {
+            "memberType": "GenAiFunction",
+            "serverRevisionCounter": 1156,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "ListView__Company__c.All": {
+            "memberType": "ListView",
+            "serverRevisionCounter": 1167,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "ApexClass__SchemaBuilder": {
+            "memberType": "ApexClass",
+            "serverRevisionCounter": 1255,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "Flow__Object_schema_builder_test": {
+            "memberType": "Flow",
+            "serverRevisionCounter": 1379,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "GenAiFunction__Execute_Datacloud_SQL_v2": {
+            "memberType": "GenAiFunction",
+            "serverRevisionCounter": 1381,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "GenAiFunction__Query_Engine_V3": {
+            "memberType": "GenAiFunction",
+            "serverRevisionCounter": 1429,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "BotVersion__Copilot_for_Salesforce.v9": {
+            "memberType": "BotVersion",
+            "serverRevisionCounter": 1451,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "GenAiPlanner__EmployeeCopilotPlanner_v2_v3_v4_v5_v6_v7_v8_v9": {
+            "memberType": "GenAiPlanner",
+            "serverRevisionCounter": 1453,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "GenAiFunction__CustomKnowledgeAction_1752183167670_v2_v3_v4_v5_v6_v7_v8_v9": {
+            "memberType": "GenAiFunction",
+            "serverRevisionCounter": 1455,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "GenAiPlugin__Query_Engine0": {
+            "memberType": "GenAiPlugin",
+            "serverRevisionCounter": 1459,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "ApexClass__Result": {
+            "memberType": "ApexClass",
+            "serverRevisionCounter": 1564,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "ApexClass__Record": {
+            "memberType": "ApexClass",
+            "serverRevisionCounter": 1565,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "ApexClass__Field": {
+            "memberType": "ApexClass",
+            "serverRevisionCounter": 1566,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "ApexClass__ResultWrapper": {
+            "memberType": "ApexClass",
+            "serverRevisionCounter": 1479,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "ApexClass__RelatedField": {
+            "memberType": "ApexClass",
+            "serverRevisionCounter": 1567,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "ApexClass__Aggregate": {
+            "memberType": "ApexClass",
+            "serverRevisionCounter": 1568,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "GenAiFunction__Query_Engine_V4": {
+            "memberType": "GenAiFunction",
+            "serverRevisionCounter": 1528,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "GenAiFunction__Datacloud_SQL_Executer_V2": {
+            "memberType": "GenAiFunction",
+            "serverRevisionCounter": 1530,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "LightningComponentBundle__recordList": {
+            "memberType": "LightningComponentBundle",
+            "serverRevisionCounter": 1816,
+            "lastRetrievedFromServer": 1816,
+            "isNameObsolete": false
+        },
+        "LightningComponentResource__recordList/recordList.html": {
+            "memberType": "LightningComponentResource",
+            "serverRevisionCounter": 1817,
+            "lastRetrievedFromServer": 1817,
+            "isNameObsolete": false
+        },
+        "LightningComponentResource__recordList/recordList.js-meta.xml": {
+            "memberType": "LightningComponentResource",
+            "serverRevisionCounter": 1818,
+            "lastRetrievedFromServer": 1818,
+            "isNameObsolete": false
+        },
+        "LightningComponentResource__recordList/recordList.js": {
+            "memberType": "LightningComponentResource",
+            "serverRevisionCounter": 1819,
+            "lastRetrievedFromServer": 1819,
+            "isNameObsolete": false
+        },
+        "LightningTypeBundle__DatacloudSQLResults": {
+            "memberType": "LightningTypeBundle",
+            "serverRevisionCounter": 1553,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "GenAiFunction__Datacloud_SQL_Executor_V3": {
+            "memberType": "GenAiFunction",
+            "serverRevisionCounter": 1550,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "GenAiFunction__Datacloud_SQL_Executor_V4": {
+            "memberType": "GenAiFunction",
+            "serverRevisionCounter": 1555,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "LightningTypeBundle__results": {
+            "memberType": "LightningTypeBundle",
+            "serverRevisionCounter": 1573,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "GenAiFunction__Datacloud_SQL_Executor_V6": {
+            "memberType": "GenAiFunction",
+            "serverRevisionCounter": 1606,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "LightningTypeBundle__SQLResults": {
+            "memberType": "LightningTypeBundle",
+            "serverRevisionCounter": 1599,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "FlexiPage__Product_Record_Page": {
+            "memberType": "FlexiPage",
+            "serverRevisionCounter": 1753,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "LightningTypeBundle__ResultsFromQuery": {
+            "memberType": "LightningTypeBundle",
+            "serverRevisionCounter": 1605,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "LightningTypeBundle__testSqlResult": {
+            "memberType": "LightningTypeBundle",
+            "serverRevisionCounter": 1766,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "GenAiFunction__Datacloud_SQL_Executor_V7": {
+            "memberType": "GenAiFunction",
+            "serverRevisionCounter": 1767,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        }
+    }
+}
