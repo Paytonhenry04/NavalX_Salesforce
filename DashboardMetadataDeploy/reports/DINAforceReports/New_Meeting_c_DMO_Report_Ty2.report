@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Meeting_c_DMO__dlm.Name__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Meeting_c_DMO__dlm.Company_c__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value></value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Meeting_c_DMO__dlm.Company_c__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <isSmartTotalDisabled>false</isSmartTotalDisabled>
+    <name>Repeated Meetings With Companies</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$Meeting_c_DMO__dlm</reportType>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Meeting_c_DMO__dlm.SystemModstamp__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

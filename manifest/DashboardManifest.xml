@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>Sales_and_Marketing_Dashboards/iwRGQmbbIGiFxOvLnrPCAagfxHsYYV</members>
+        <name>Dashboard</name>
+    </types>
+    <types>
+        <members>Sales_and_Marketing_Dashboards</members>
+        <name>DashboardFolder</name>
+    </types>
+    <types>
+        <members>DINAforceReports/AVG_Meeting_Duration_D6T</members>
+        <members>DINAforceReports/Last_Weeks_Meeting_Report_StD</members>
+        <members>DINAforceReports/New_Companies_by_Last_Month_iSm</members>
+        <members>DINAforceReports/New_Meeting_c_DMO_Report_Ty2</members>
+        <members>DINAforceReports/of_Meeting_by_Group_Cu2</members>
+        <members>DINAforceReports/of_Meetings_by_User_Report_p96</members>
+        <members>DINAforceReports/of_Meetings_last_30_Days_Lxf</members>
+        <members>DINAforceReports/of_New_Products_Quarterly_6Ov</members>
+        <name>Report</name>
+    </types>
+    <types>
+        <members>DINAforceReports</members>
+        <name>ReportFolder</name>
+    </types>
+    <version>64.0</version>
+</Package>

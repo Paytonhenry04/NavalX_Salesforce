@@ -1,0 +1,54 @@
+.map-container {
+    height: 1000px;
+    width: 100%;
+    margin: 0;
+    /* Fix z-index to ensure map stays below Salesforce UI elements */
+    position: relative;
+    z-index: 1;
+}
+
+/* Ensure Leaflet controls display properly but don't interfere with SLDS */
+:host .leaflet-control-container {
+    font-family: inherit;
+    /* Ensure map controls don't interfere with Salesforce dropdowns */
+    z-index: 100 !important;
+}
+
+/* Ensure Leaflet popup and tooltip z-index is appropriate */
+:host .leaflet-popup {
+    z-index: 1000 !important;
+}
+
+:host .leaflet-tooltip {
+    z-index: 1000 !important;
+}
+
+/* Keep map pane at a low z-index */
+:host .leaflet-map-pane {
+    z-index: auto !important;
+}
+
+.slds-card__body {
+    padding: 0 !important;
+}
+
+.map-container {
+    border-radius: 0 0 0.25rem 0.25rem;
+}
+
+/* Style for popup content */
+:host .leaflet-popup-content {
+    margin: 8px;
+    text-align: center;
+}
+
+/* Ensure proper spacing for info message */
+.slds-align_absolute-center {
+    text-align: center;
+}
+
+/* Custom marker styles */
+:host .custom-marker {
+    background: transparent !important;
+    border: none !important;
+}
