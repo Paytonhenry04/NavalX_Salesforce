@@ -10,6 +10,7 @@
     </targets>
     <targetConfigs>
         <targetConfig targets="lightning__RecordPage">
+           
             <objects>
                 <object>Company__c</object>
             </objects>
@@ -17,6 +18,9 @@
                 <supportedFormFactor type="Large"/>
                 <supportedFormFactor type="Small"/>
             </supportedFormFactors>
+        </targetConfig>
+        <targetConfig targets="lightning__AppPage">
+            <property name="height" type="Integer" description="Height of the component in pixels" />
         </targetConfig>
     </targetConfigs>
 </LightningComponentBundle>

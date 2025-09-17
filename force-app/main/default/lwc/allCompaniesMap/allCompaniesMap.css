@@ -1,10 +1,24 @@
 .map-container {
-    height: 1000px;
+    /* Height will be set dynamically via inline styles */
     width: 100%;
     margin: 0;
     /* Fix z-index to ensure map stays below Salesforce UI elements */
     position: relative;
     z-index: 1;
+}
+
+/* Style for combobox filter */
+.combobox-filter {
+    min-width: 150px;
+}
+
+/* Style for marker indicators */
+.company-marker {
+    color: #1976d2;
+}
+
+.lab-marker {
+    color: #f57c00;
 }
 
 /* Ensure Leaflet controls display properly but don't interfere with SLDS */

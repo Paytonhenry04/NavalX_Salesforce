@@ -26,13 +26,12 @@
                 <div class="slds-grid slds-grid_align-spread slds-grid_vertical-align-center">
                     <div class="slds-col">
                         <div class="slds-text-body_small slds-text-color_weak">
-                            Showing {visibleLocationsCount} of {locationsCount} locations 
+                            Showing {visibleLocationsCount} of {locationsCount} locations
                             <template if:true={visibleCompaniesCount}>
-                                (<span style="color: #1976d2;">●</span> {visibleCompaniesCount} companies
+                                (<span class="company-marker">●</span> {visibleCompaniesCount} companies<template if:true={visibleLabsCount}>, </template><template if:false={visibleLabsCount}>)</template>
                             </template>
                             <template if:true={visibleLabsCount}>
-                                <template if:true={visibleCompaniesCount}>, </template>
-                                <span style="color: #f57c00;">●</span> {visibleLabsCount} research labs)
+                                <template if:false={visibleCompaniesCount}>(</template><span class="lab-marker">●</span> {visibleLabsCount} research labs)
                             </template>
                         </div>
                     </div>
@@ -45,8 +44,7 @@
                             options={viewOptions}
                             onchange={handleViewChange}
                             variant="label-hidden"
-                            class="slds-m-left_medium"
-                            style="min-width: 150px;">
+                            class="slds-m-left_medium combobox-filter">
                         </lightning-combobox>
                         
                         <div class="slds-m-left_medium">

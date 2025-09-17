@@ -1,4 +1,4 @@
-import { LightningElement, wire, track } from 'lwc';
+import { LightningElement, wire, track, api } from 'lwc';
 import { loadScript, loadStyle } from 'lightning/platformResourceLoader';
 import { NavigationMixin } from 'lightning/navigation';
 import leafletResource from '@salesforce/resourceUrl/Leaflet';
@@ -7,12 +7,15 @@ import leafletHeat from '@salesforce/resourceUrl/LeafletHeat';
 
 export default class AllCompaniesMap extends NavigationMixin(LightningElement) {
     @track locations = [];
-    @track selectedView = 'all'; // Default to show all locations
+    @track selectedView = 'all'; // Default to show all selection
     map;
     markers = []; // Store all markers for filtering
     leafletLoaded = false;
     isLoading = true;
     error;
+
+    // Configuration properties for Lightning App Builder
+    @api height = 1000; // Default height in pixels
 
     heatLayer; 
     isHeatMap = false; 
@@ -80,6 +83,23 @@ export default class AllCompaniesMap extends NavigationMixin(LightningElement) {
             case 'all':
             default:
                 return this.locations;
+        }
+    }
+
+    // Handle map resize when dimensions change (called when properties change)
+    renderedCallback() {
+        // Apply dynamic height to map container
+        const mapContainer = this.template.querySelector('.map-container');
+        if (mapContainer && this.height) {
+            mapContainer.style.height = `${this.height}px`;
+        }
+        
+        // Handle map resize when dimensions change
+        if (this.map) {
+            // Use setTimeout to ensure DOM has updated
+            setTimeout(() => {
+                this.map.invalidateSize();
+            }, 100);
         }
     }
 
