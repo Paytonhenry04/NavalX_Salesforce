@@ -1,6 +1,5 @@
 .map-container {
-    height: 1000px;
-    width: 100%;
+    /* Height and width will be set dynamically via inline styles */
     margin: 0;
     /* Fix z-index to ensure map stays below Salesforce UI elements */
     position: relative;
