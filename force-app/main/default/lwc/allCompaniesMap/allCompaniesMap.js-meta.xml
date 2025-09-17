@@ -21,7 +21,6 @@
         </targetConfig>
         <targetConfig targets="lightning__AppPage">
             <property name="height" type="Integer" description="Height of the component in pixels" />
-            <property name="width" type="Integer" description="Width of the component in pixels" />
         </targetConfig>
     </targetConfigs>
 </LightningComponentBundle>

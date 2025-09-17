@@ -15,8 +15,7 @@ export default class AllCompaniesMap extends NavigationMixin(LightningElement) {
     error;
 
     // Configuration properties for Lightning App Builder
-    @api height = 1000; // Default height in pixels  
-    @api width; // Default width (will use 100% if not specified)
+    @api height = 1000; // Default height in pixels
 
     heatLayer; 
     isHeatMap = false; 
@@ -87,25 +86,14 @@ export default class AllCompaniesMap extends NavigationMixin(LightningElement) {
         }
     }
 
-    // Dynamic styling getters
-    get mapContainerStyle() {
-        let style = '';
-        
-        if (this.height) {
-            style += `height: ${this.height}px; `;
-        }
-        
-        if (this.width) {
-            style += `width: ${this.width}px; `;
-        } else {
-            style += 'width: 100%; ';
-        }
-        
-        return style;
-    }
-
     // Handle map resize when dimensions change (called when properties change)
     renderedCallback() {
+        // Apply dynamic height to map container
+        const mapContainer = this.template.querySelector('.map-container');
+        if (mapContainer && this.height) {
+            mapContainer.style.height = `${this.height}px`;
+        }
+        
         // Handle map resize when dimensions change
         if (this.map) {
             // Use setTimeout to ensure DOM has updated

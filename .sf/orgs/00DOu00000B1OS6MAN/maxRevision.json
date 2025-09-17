@@ -1,6 +1,6 @@
 {
     "fileVersion": 0,
-    "serverMaxRevisionCounter": 2499,
+    "serverMaxRevisionCounter": 2508,
     "sourceMembers": {
         "CustomMetadata__Query_Engine_Object_Schema.Product2_Home_dlm": {
             "memberType": "CustomMetadata",
@@ -58,7 +58,7 @@
         },
         "GenAiPromptTemplate__Dynamic_Object_SQL_Converter_DOSC": {
             "memberType": "GenAiPromptTemplate",
-            "serverRevisionCounter": 2494,
+            "serverRevisionCounter": 2508,
             "lastRetrievedFromServer": null,
             "isNameObsolete": false
         },
