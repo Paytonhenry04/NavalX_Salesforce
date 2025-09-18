@@ -231,12 +231,12 @@
                         <sortOrder>a</sortOrder>
                     </groupingSorts>
                 </groupingSortProperties>
-                <header>Weekly Average Meeting Duration</header>
+                <header>Average Meeting Duration</header>
                 <legendPosition>Bottom</legendPosition>
-                <maxValuesDisplayed>10</maxValuesDisplayed>
+                <maxValuesDisplayed>16</maxValuesDisplayed>
                 <report>DINAforceReports/AVG_Meeting_Duration_D6T</report>
                 <showPercentage>false</showPercentage>
-                <showValues>false</showValues>
+                <showValues>true</showValues>
                 <sortBy>RowLabelAscending</sortBy>
                 <sortLegendValues>true</sortLegendValues>
                 <useReportChart>false</useReportChart>

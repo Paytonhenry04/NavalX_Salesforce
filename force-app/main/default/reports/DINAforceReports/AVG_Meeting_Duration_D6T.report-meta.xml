@@ -40,7 +40,7 @@
     </filter>
     <format>Summary</format>
     <groupingsDown>
-        <dateGranularity>Week</dateGranularity>
+        <dateGranularity>Month</dateGranularity>
         <field>Meeting_c_DMO__dlm.Start_Date_Time_c__c</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
@@ -54,6 +54,8 @@
     <showDetails>true</showDetails>
     <showGrandTotal>true</showGrandTotal>
     <showSubTotals>true</showSubTotals>
+    <sortColumn>Meeting_c_DMO__dlm.Length_In_Minutes_c__c</sortColumn>
+    <sortOrder>Asc</sortOrder>
     <timeFrameFilter>
         <dateColumn>Meeting_c_DMO__dlm.SystemModstamp__c</dateColumn>
         <interval>INTERVAL_CUSTOM</interval>
