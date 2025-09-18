@@ -27,6 +27,15 @@
     <columns>
         <field>Meeting_c_DMO__dlm.Name__c</field>
     </columns>
+    <filter>
+        <criteriaItems>
+            <column>Meeting_c_DMO__dlm.DINA_User_First_Name_c__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value></value>
+        </criteriaItems>
+    </filter>
     <format>Matrix</format>
     <groupingsAcross>
         <dateGranularity>Day</dateGranularity>
