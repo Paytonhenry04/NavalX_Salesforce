@@ -28,6 +28,22 @@
     <columns>
         <field>Meeting_c_DMO__dlm.Name__c</field>
     </columns>
+    <filter>
+        <criteriaItems>
+            <column>Meeting_c_DMO__dlm.DINA_Share_Group_Title_c__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value></value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Meeting_c_DMO__dlm.DINA_Share_Group_Title_c__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>,Business Card Scan,CAiMLL Capability Briefs,Costal Trident ANTX 25-November,Fed Supernova,Maverick Lab -  Perris,State and Local Governments,Ventura Visit</value>
+        </criteriaItems>
+    </filter>
     <format>Summary</format>
     <groupingsDown>
         <dateGranularity>Day</dateGranularity>
