@@ -1,0 +1,78 @@
+<template>
+    <lightning-card title="All Company & Lab Locations" icon-name="utility:location">
+        <!-- Spinner while loading -->
+        <template if:true={isLoading}>
+            <div class="slds-align_absolute-center slds-p-around_medium">
+                <lightning-spinner alternative-text="Loading locations..."></lightning-spinner>
+            </div>
+        </template>
+
+        <!-- Error message -->
+        <template if:true={error}>
+            <div class="slds-p-around_medium">
+                <div class="slds-notify slds-notify_alert slds-alert_error">
+                    <span class="slds-assistive-text">Error</span>
+                    <div class="slds-notify__content">
+                        <h2>Error loading locations: {error}</h2>
+                    </div>
+                </div>
+            </div>
+        </template>
+
+        <!-- Show map when locations are loaded -->
+        <template if:true={hasLocations}>
+            <!-- Filter Controls -->
+            <div class="slds-p-around_medium slds-border_bottom">
+                <div class="slds-grid slds-grid_align-spread slds-grid_vertical-align-center">
+                    <div class="slds-col">
+                        <div class="slds-text-body_small slds-text-color_weak">
+                            Showing {visibleLocationsCount} of {locationsCount} locations
+                            <template if:true={visibleCompaniesCount}>
+                                (<span class="company-marker">●</span> {visibleCompaniesCount} companies<template if:true={visibleLabsCount}>, </template><template if:false={visibleLabsCount}>)</template>
+                            </template>
+                            <template if:true={visibleLabsCount}>
+                                <template if:false={visibleCompaniesCount}>(</template><span class="lab-marker">●</span> {visibleLabsCount} research labs)
+                            </template>
+                        </div>
+                    </div>
+                    <div class="slds-col slds-no-flex">
+                        <lightning-combobox
+                            name="viewFilter"
+                            label="View"
+                            value={selectedView}
+                            placeholder="Select view..."
+                            options={viewOptions}
+                            onchange={handleViewChange}
+                            variant="label-hidden"
+                            class="slds-m-left_medium combobox-filter">
+                        </lightning-combobox>
+                        
+                        <div class="slds-m-left_medium">
+                            <lightning-button 
+                                label="Toggle Heatmap" 
+                                onclick={toggleHeatmap}>
+                            </lightning-button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="map-container" lwc:dom="manual"></div>
+        </template>
+
+        <!-- No locations message -->
+        <template if:true={noLocations}>
+            <div class="slds-p-around_medium">
+                <div class="slds-align_absolute-center">
+                    <lightning-icon icon-name="utility:info" size="large" variant="inverse"></lightning-icon>
+                    <div class="slds-p-top_small">
+                        <p class="slds-text-heading_small">No locations found</p>
+                        <p class="slds-text-body_regular slds-text-color_weak">
+                            Add location data to companies and research labs to see them on the map.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </template>
+    </lightning-card>
+</template>
